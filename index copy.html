@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Adil website</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.
+<?php
+	$conn = pg_connect("host=adil.c8unzifuhh8y.us-east-1.rds.amazonaws.com port=5432 dbname=ShoppOn user=Adil password=4710app1");
+	if($conn) {
+       echo "Connection success";
+    } else {
+        echo "Fail as hell";
+    } 
+    $dbname = pg_dbname($conn);
+    echo $dbname;
+    echo "<br />";
+    $qur = pg_query($conn, 'select email, name from "Users"');
+    if (!$qur){
+    echo "<br />query failed! <br />";
+    }
+    while ($row = pg_fetch_row($qur)) {
+  	 echo "$row[0] $row[1]";
+  	 echo "<br />\n";
+    }
+?>
+</p>
+<form action="<?php echo 'name/test.php'; ?>" method=”post”>
+        <input type="text" name="firstname"> <br />
+        <input type="text" name="lastname"> <br />
+        <input type="submit" value="some button name">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
