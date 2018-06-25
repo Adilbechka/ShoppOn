@@ -1,3 +1,5 @@
+![alt text](https://raw.githubusercontent.com/Adilbechka/ShoppOn/master/shoppOn.png)
+
 This is a sorcecode of the database project that I have developed using PostgreSQL. I run DB instance 
 on Amazon Web Services RDS and hosted website on remote server with Apache. To view working website,
 please, visit 
